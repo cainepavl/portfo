@@ -3,6 +3,18 @@
 Welcome to my portfolio website! 
 This project showcases my work and skills using Flask, a lightweight WSGI web application framework in Python.  
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [How to Use](#how-to-use)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
+  
 ## Features  
 
 - **Home Page**: A simple landing page to introduce visitors to my portfolio.  
