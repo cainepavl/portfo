@@ -67,4 +67,4 @@ This project is licensed under the MIT License - see the  file for details.
 
 ## Contact
 
-If you have any questions, feel free to contact me at: [CONTACT](cainepavl@outlook.com)
+If you have any questions, feel free to contact me at: cainepavl@outlook.com
