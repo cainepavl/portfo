@@ -57,7 +57,7 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 
 ## License
 
-This project is licensed under the MIT License - see the  file for details.
+This project is licensed under the MIT License - [LICENSE](https://github.com/cainepavl/portfo/blob/main/LICENSE) see the  file for details.
 
 ## Acknowledgements
 
