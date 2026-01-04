@@ -3,6 +3,8 @@ import csv
 
 app = Flask(__name__)
 
+# -- Routing --
+
 @app.route("/")
 def my_home():
     return render_template('index.html')
@@ -10,6 +12,8 @@ def my_home():
 @app.route("/<string:page_name>")
 def html_page(page_name):
     return render_template(page_name)
+
+# -- Data Persistence --
 
 def write_to_csv(data):
     """
@@ -33,6 +37,8 @@ def write_to_csv(data):
 
         csv_writer = csv.writer(database2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         csv_writer.writerow(sanitized_row)
+
+# -- Form Handling --
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
