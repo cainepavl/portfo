@@ -1,12 +1,12 @@
 # My Portfolio Website  
 
-Welcome to my portfolio website! 
-This project showcases my work and skills using Flask, a lightweight WSGI web application framework in Python.  
+Welcome to my portfolio website! This project showcases my work and skills using Flask, a lightweight WSGI web application framework in Python. It has been hardened with specific security logic to demonstrate a "Security-First" approach to web development.  
 
 ## Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Security Showcase](#security-showcase)
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [How to Use](#how-to-use)
@@ -17,17 +17,24 @@ This project showcases my work and skills using Flask, a lightweight WSGI web ap
   
 ## Features  
 
-- **Home Page**: A simple landing page to introduce visitors to my portfolio.  
-- **Dynamic Page Rendering**: Create and render additional HTML pages based on the URL.  
-- **Form Submission**: Users can submit their contact information, which gets saved to a text file and a CSV file.  
-- **Thank You Page**: A confirmation page displayed after form submission.  
-
+- **Home Page**:A professional landing page to introduce visitors to my portfolio and technical background.
+- **Dynamic Page Rendering**: Utilizes Flask's Jinja2 engine to render HTML pages dynamically based on URL strings.
+- **Secure Form Submission**: Processes contact information with server-side validation and sanitization.
+- **AppSec Hardening**: Built-in protection against CSV Injection (Formula Injection) to ensure data integrity.
+- **Thank You Page**: A confirmation page displayed after successful data persistence.
+  
 ## Technologies Used  
 
 - **Flask**: Python web framework  
 - **HTML/CSS**: For the front-end design  
 - **CSV**: For form data storage  
 - **Python**: Main programming language  
+
+## Security Showcase
+
+In this project, I prioritized Application Security (AppSec) by addressing CSV Injection. Standard CSV logging is vulnerable if a user submits a message starting with =, +, -, or @.
+
+The Fix: My server.py logic proactively detects these "dangerous" characters and prepends a single quote (') to the input before writing to database.csv. This forces spreadsheet software to treat the input as literal text, preventing unauthorized command execution or data exfiltration.
 
 ## Installation  
 
@@ -40,6 +47,9 @@ git clone https://github.com/cainepavl/portfo.git
 ## Prerequisites
 
 - Python 3.x installed on your machine. You can download it from [PYTHON](python.org.)
+- Pip: Python package installer.
+
+Setup
 
 ## Setup
 
