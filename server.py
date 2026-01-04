@@ -23,12 +23,21 @@ def write_to_file(data):
     file = database.write(f'\n{email},{subject},{message}')
 
 def write_to_csv(data):
-  with open('database.csv', mode='a', newline='') as database2:
-    email = data["email"]
-    subject = data["subject"]
-    message = data["message"]
-    csv_writer = csv.writer(database2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    csv_writer.writerow([email,subject,message])
+    with open('database.csv', mode='a', newline='') as database2:
+        # Define dangerous characters that trigger formulas in Excel/Calc
+        dangerous_chars = ('=', '+', '-', '@', '\t', '\r')
+        
+        # Sanitize each field
+        processed_data = []
+        for key in ["email", "subject", "message"]:
+            value = data[key]
+            # If the value starts with a dangerous char, prepend a single quote
+            if value.startswith(dangerous_chars):
+                value = f"'{value}" 
+            processed_data.append(value)
+
+        csv_writer = csv.writer(database2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        csv_writer.writerow(processed_data)
 
 # --- Form Handling ---
 
