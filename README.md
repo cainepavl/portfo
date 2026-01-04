@@ -49,8 +49,6 @@ git clone https://github.com/cainepavl/portfo.git
 - Python 3.x installed on your machine. You can download it from [PYTHON](python.org.)
 - Pip: Python package installer.
 
-Setup
-
 ## Setup
 
 1. Navigate to the project directory:
