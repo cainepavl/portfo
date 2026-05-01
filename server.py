@@ -1,9 +1,13 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory
 import csv
 
 app = Flask(__name__)
 
 # -- Routing --
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.root_path, 'robots.txt')
 
 @app.route("/")
 def my_home():
@@ -40,7 +44,7 @@ def write_to_csv(data):
 
 # -- Form Handling --
 
-@app.route('/submit_form', methods=['POST', 'GET'])
+@app.route('/reach', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
         try:
