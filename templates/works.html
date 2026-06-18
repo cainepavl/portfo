@@ -41,6 +41,13 @@
   .projects-carousel .carousel-control:focus {
     color: #39ff14;
   }
+  /* The bundled CSS is missing Bootstrap's rule that hides inactive slides.
+     Without this, every .item renders as display:block and all stack vertically. */
+  #myCarousel .carousel-inner > .item               { display: none; }
+  #myCarousel .carousel-inner > .item.active,
+  #myCarousel .carousel-inner > .item.next,
+  #myCarousel .carousel-inner > .item.prev          { display: block; }
+
   /* Bundled CSS hides carousel controls on mobile — override. */
   @media (max-width: 767px) {
     .projects-carousel .carousel-control {
